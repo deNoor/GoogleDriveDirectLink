@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoogleDriveUrl", "GoogleDriveDirectLink\GoogleDriveUrl.csproj", "{32A93FD7-B21B-4154-900C-5A75CB888B07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsClipboard", "WindowsClipboard\WindowsClipboard.csproj", "{D4EA3A4A-CBD2-415E-8499-B5D359273209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32A93FD7-B21B-4154-900C-5A75CB888B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A93FD7-B21B-4154-900C-5A75CB888B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A93FD7-B21B-4154-900C-5A75CB888B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A93FD7-B21B-4154-900C-5A75CB888B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EA3A4A-CBD2-415E-8499-B5D359273209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EA3A4A-CBD2-415E-8499-B5D359273209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EA3A4A-CBD2-415E-8499-B5D359273209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EA3A4A-CBD2-415E-8499-B5D359273209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {112F85D4-A909-448F-B31F-1EDBE912FC08}
+	EndGlobalSection
+EndGlobal
