@@ -12,7 +12,7 @@ namespace GoogleDriveUrl
                 ^
                 (?'DriveHost'https:\/\/drive\.google\.com\/) # https://drive.google.com/
                 (?:file\/d\/)                                # file/d/ - can be changes by Google in the future
-                (?'FileId'\w+)                               # your file Id - 33 symbols at the moment
+                (?'FileId'.+)                                # your file Id - 33 symbols at the moment
                 \/(\S+)                                      # /view?usp=sharing - ending
                 $
             ",
