@@ -1,6 +1,6 @@
 # GoogleDriveDirectLink
-Converts Google Drive single file shareable link into a direct link.
+Converts Google Drive file sharing url into a direct downloadable link to this file. Direct links are also usable for embedding images on forums.
 
-Copy link provided by Drive in "Get link" dialog into clipboard → run this converter to get direct link to your file → paste converted link.
+Requires an url to be in clipboard. Copy an url provided by the Drive in "Get link" dialog → run the exe → paste a converted url.
 
-Desired query is `u/0/uc?id=FileId`.
+Resulting ulr looks like `https://drive.google.com/u/0/uc?id=[random-symbols]`.
