@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace GoogleDriveUrl
+namespace GoogleDriveDirectLink
 {
-    public class GoogleDriveUrlReplacer
+    public class DriveUrlEditor
     {
         private const string DirectPathAndQuery = @"u/0/uc?id=";
 
-        private static readonly Regex _sharingUrlTemplate = new Regex(
+        private static readonly Regex _sharingUrlTemplate = new(
             @"
                 ^
                 (?'DriveHost'https:\/\/drive\.google\.com\/) # https://drive.google.com/

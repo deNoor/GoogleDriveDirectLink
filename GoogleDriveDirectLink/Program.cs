@@ -1,8 +1,8 @@
 using System;
 using System.Windows;
-using static GoogleDriveUrl.GoogleDriveUrlReplacer;
+using static GoogleDriveDirectLink.DriveUrlEditor;
 
-namespace WindowsClipboard
+namespace GoogleDriveDirectLink
 {
     internal class Program
     {
