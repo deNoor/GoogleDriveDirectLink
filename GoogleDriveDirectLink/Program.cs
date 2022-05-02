@@ -2,36 +2,35 @@ using System;
 using System.Windows;
 using static GoogleDriveDirectLink.DriveUrlEditor;
 
-namespace GoogleDriveDirectLink
+namespace GoogleDriveDirectLink;
+
+internal class Program
 {
-    internal class Program
+    [STAThread]
+    private static void Main()
     {
-        [STAThread]
-        private static void Main()
+        if (!TryReplaceLinkInClipboard())
         {
-            if (!TryReplaceLinkInClipboard())
-            {
-                Console.ReadKey(); // Let user read console output.
-            }
+            Console.ReadKey(); // Let user read console output.
+        }
+    }
+
+    private static bool TryReplaceLinkInClipboard()
+    {
+        var url = Clipboard.GetText();
+        if (string.IsNullOrWhiteSpace(url))
+        {
+            Console.WriteLine("There is no url in clipboard.");
+            return false;
         }
 
-        private static bool TryReplaceLinkInClipboard()
+        if (!TryConvertToDirectLink(url, out var directLink))
         {
-            var url = Clipboard.GetText();
-            if (string.IsNullOrWhiteSpace(url))
-            {
-                Console.WriteLine("There is no url in clipboard.");
-                return false;
-            }
-
-            if (!TryConvertToDirectLink(url, out var directLink))
-            {
-                Console.WriteLine($"Failed to convert {url}");
-                return false;
-            }
-
-            Clipboard.SetText(directLink);
-            return true;
+            Console.WriteLine($"Failed to convert {url}");
+            return false;
         }
+
+        Clipboard.SetText(directLink);
+        return true;
     }
 }
