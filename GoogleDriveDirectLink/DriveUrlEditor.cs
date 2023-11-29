@@ -5,17 +5,17 @@ namespace GoogleDriveDirectLink;
 
 public class DriveUrlEditor
 {
-    private const string DirectPathAndQuery = @"u/0/uc?id=";
+    private const string DirectPathAndQuery = "u/0/uc?id=";
 
     private static readonly Regex _sharingUrlTemplate = new(
-        @"
-                ^
-                (?'DriveHost'https:\/\/drive\.google\.com\/) # https://drive.google.com/
-                (?:file\/d\/)                                # file/d/ - can be changes by Google in the future
-                (?'FileId'.+)                                # your file Id - 33 symbols at the moment
-                \/(\S+)                                      # /view?usp=sharing - ending
-                $
-            ",
+        """
+        ^
+        (?'DriveHost'https:\/\/drive\.google\.com\/) # https://drive.google.com/
+        (?:file\/d\/)                                # file/d/ - can be changes by Google in the future
+        (?'FileId'.+)                                # your file Id - 33 symbols at the moment
+        \/(\S+)                                      # /view?usp=sharing - ending
+        $
+        """,
         RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled,
         TimeSpan.FromMilliseconds(50));
 
