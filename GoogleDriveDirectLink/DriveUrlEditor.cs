@@ -5,7 +5,7 @@ namespace GoogleDriveDirectLink;
 
 public class DriveUrlEditor
 {
-    private const string DirectPathAndQuery = "u/0/uc?id=";
+    private const string DirectPathAndQuery = "uc?id=";
 
     private static readonly Regex _sharingUrlTemplate = new(
         """
