@@ -3,4 +3,4 @@ Converts Google Drive file sharing url into a direct downloadable link to this f
 
 Requires an url to be in clipboard. Copy an url provided by the Drive in "Get link" dialog → run the exe → paste a converted url.
 
-Resulting url looks like `https://drive.google.com/u/0/uc?id=[random-symbols]`.
+Resulting url looks like `https://drive.google.com/uc?id=[random-symbols]`.
