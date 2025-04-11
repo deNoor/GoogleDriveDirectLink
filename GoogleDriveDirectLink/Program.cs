@@ -1,12 +1,10 @@
 using System;
-using System.Windows;
 using static GoogleDriveDirectLink.DriveUrlEditor;
 
 namespace GoogleDriveDirectLink;
 
 internal class Program
 {
-    [STAThread]
     private static void Main()
     {
         if (!TryReplaceLinkInClipboard())
@@ -17,7 +15,8 @@ internal class Program
 
     private static bool TryReplaceLinkInClipboard()
     {
-        var url = Clipboard.GetText();
+        using var clipboard = new ClipboardAccessor();
+        var url = clipboard.GetText();
         if (string.IsNullOrWhiteSpace(url))
         {
             Console.WriteLine("There is no url in clipboard.");
@@ -30,7 +29,7 @@ internal class Program
             return false;
         }
 
-        Clipboard.SetText(directLink);
+        clipboard.SetText(directLink);
         return true;
     }
 }

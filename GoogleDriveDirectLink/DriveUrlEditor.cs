@@ -19,9 +19,9 @@ public class DriveUrlEditor
         RegexOptions.IgnorePatternWhitespace | RegexOptions.Compiled,
         TimeSpan.FromMilliseconds(50));
 
-    public static bool TryConvertToDirectLink(string url, out string? directLink)
+    public static bool TryConvertToDirectLink(string url, out string directLink)
     {
-        directLink = default;
+        directLink = string.Empty;
         var match = _sharingUrlTemplate.Match(url);
         if (!match.Success)
         {
