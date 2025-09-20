@@ -1,4 +1,5 @@
 using System;
+using System.Windows;
 using static GoogleDriveDirectLink.DriveUrlEditor;
 
 namespace GoogleDriveDirectLink;
@@ -15,21 +16,19 @@ internal class Program
 
     private static bool TryReplaceLinkInClipboard()
     {
-        using var clipboard = new ClipboardAccessor();
-        var url = clipboard.GetText();
+        using var staThread = new StaThreadProvider();
+        var url = staThread.Run(Clipboard.GetText);
         if (string.IsNullOrWhiteSpace(url))
         {
             Console.WriteLine("There is no url in clipboard.");
             return false;
         }
-
         if (!TryConvertToDirectLink(url, out var directLink))
         {
             Console.WriteLine($"Failed to convert {url}");
             return false;
         }
-
-        clipboard.SetText(directLink);
+        staThread.Run(() => Clipboard.SetText(directLink));
         return true;
     }
 }
